@@ -90,8 +90,7 @@ INSERT INTO Bookings (booking_id, user_id, match_id, seat_number, payment_status
 ## SQL Queries & Implementations
 
 
-## Query 1: Filter Available Cup Matches
-Retrieve upcoming matches belonging to the 'Champions League' where the status is 'Available'.
+## Query 1: Filter Available Cup Matches Retrieve upcoming matches belonging to the 'Champions League' where the status is 'Available'.
 
 SQL
 SELECT * FROM matches 
@@ -100,8 +99,7 @@ WHERE tournament_category = 'Champions League'
 
 
 
-## Query 2: Case-Insensitive Pattern Matching
-Search for users whose names start with 'Tanvir' or contain 'Haque'.
+## Query 2: Case-Insensitive Pattern Matching Search for users whose names start with 'Tanvir' or contain 'Haque'.
 
 SQL
 SELECT * FROM users  
@@ -109,8 +107,7 @@ WHERE full_name ILIKE 'Tanvir%'
    OR full_name ILIKE '%Haque%';
 
 
-## Query 3: Graceful Null Resolution
-Isolate uncompleted payment items and replace blank records with 'Action Required'.
+## Query 3: Graceful Null Resolution Isolate uncompleted payment items and replace blank records with 'Action Required'.
 
 SQL
 SELECT booking_id, user_id, match_id, seat_number, 
@@ -129,8 +126,7 @@ INNER JOIN bookings b ON u.user_id = b.user_id
 INNER JOIN matches m ON m.match_id = b.match_id;
 
 
-## Query 5: Preserving Unmatched Left Rows
-Generate a master client directory displaying registration numbers alongside any current purchases, ensuring accounts without tickets are preserved.
+## Query 5: Preserving Unmatched Left Rows Generate a master client directory displaying registration numbers alongside any current purchases, ensuring accounts without tickets are preserved.
 
 SQL
 SELECT u.user_id, u.full_name, b.booking_id 
@@ -138,8 +134,7 @@ FROM users u
 LEFT JOIN bookings b ON u.user_id = b.user_id;
 
 
-## Query 6: Complex Aggregates via Subqueries
-Expose high-tier accounts where a ticket invoice cost stretches strictly higher than the platforms global average transactional cost.
+## Query 6: Complex Aggregates via Subqueries Expose high-tier accounts where a ticket invoice cost stretches strictly higher than the platforms global average transactional cost.
 
 SQL
 SELECT booking_id, match_id, total_cost 
@@ -147,8 +142,7 @@ FROM bookings
 WHERE total_cost > (SELECT AVG(total_cost) FROM bookings);
 
 
-## Query 7: Dataset Pagination and Offsets
-Isolate premium ticket match offerings by ordering listings by baseline values, returning the top 2 highest results while intentionally skipping the number one spot.
+## Query 7: Dataset Pagination and Offsets Isolate premium ticket match offerings by ordering listings by baseline values, returning the top 2 highest results while intentionally skipping the number one spot.
 
 SQL
 SELECT match_id, fixture, base_ticket_price 
