@@ -18,6 +18,9 @@ The system relies on three core entities:
 2. **Matches:** Catalogs tournament fixtures, pricing structures, and match statuses.
 3. **Bookings:** The transactional engine mapping users directly to unique match seat reservations.
 
+## Database Design
+- [View ER Diagram](https://drawsql.app/teams/kazi-ashikur/diagrams/a3-football-ticket-booking-system)
+
 [ Users ] 1 ────────── 0..* [ Bookings ]
                                      *
                                      │
