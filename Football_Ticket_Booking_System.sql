@@ -1,12 +1,4 @@
 
-
-
-
-
-create database Football_Ticket_Booking_System
-
-
-
 -- =========================================================================
 -- SYSTEM: Football Ticket Booking System Database Setup Template
 -- DESCRIPTION: Pseudo-DDL Template for Table Creation & Data Insertion
@@ -14,10 +6,13 @@ create database Football_Ticket_Booking_System
 --               actual data types, relational keys, and check criteria.
 -- =========================================================================
 
+create database Football_Ticket_Booking_System
+
 -- DROP TABLES IF THEY ALREADY EXIST TO PREVENT CONFLICTS
 DROP TABLE IF EXISTS Bookings;
 DROP TABLE IF EXISTS Matches;
 DROP TABLE IF EXISTS Users;
+
 -- =========================================================================
 -- 1. CREATE USERS TABLE
 -- =========================================================================
@@ -108,27 +103,24 @@ INSERT INTO Bookings (booking_id, user_id, match_id, seat_number, payment_status
 (505, 3, 102, 'C-20', 'Pending', 120.00);
 
 
-select * from bookings
-select * from matches
-select * from users
-
-  
-
 -- =========================================================================
+select * from users
+select * from matches
+select * from bookings
 
 -- =========================================================================
 
 
   
 --Query 1: Retrieve all upcoming football matches belonging to the 'Champions League' where the match status is 'Available'.
-select * from matches where tournament_category='Champions League' and match_status='Available'
+select match_id,fixture, base_ticket_price from matches where tournament_category='Champions League' and match_status='Available'
 
 
   
 
 --Query 2: Search for all users whose full names start with 'Tanvir' or contain the phrase 'Haque' (case-insensitive).
 
-select * from users  where full_name ilike 'Tanvir%' or  full_name ilike '%Haque%'
+select user_id, full_name,email from users  where full_name ilike 'Tanvir%' or  full_name ilike '%Haque%'
 
 
 
