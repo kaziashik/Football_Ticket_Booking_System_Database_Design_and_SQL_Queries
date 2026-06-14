@@ -1,12 +1,13 @@
 
+create database Football_Ticket_Booking_System
+
+
 -- =========================================================================
 -- SYSTEM: Football Ticket Booking System Database Setup Template
 -- DESCRIPTION: Pseudo-DDL Template for Table Creation & Data Insertion
 -- INSTRUCTIONS: Replace 'TYPE' and the constraint placeholders with your own
 --               actual data types, relational keys, and check criteria.
 -- =========================================================================
-
-create database Football_Ticket_Booking_System
 
 -- DROP TABLES IF THEY ALREADY EXIST TO PREVENT CONFLICTS
 DROP TABLE IF EXISTS Bookings;
@@ -103,10 +104,14 @@ INSERT INTO Bookings (booking_id, user_id, match_id, seat_number, payment_status
 (505, 3, 102, 'C-20', 'Pending', 120.00);
 
 
+
+
+
 -- =========================================================================
 select * from users
 select * from matches
 select * from bookings
+
 
 -- =========================================================================
 
